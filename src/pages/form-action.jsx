@@ -1,39 +1,6 @@
 import React, { useActionState } from 'react';
 import React18Form from '../component/form-action/React18Form';
-
-// 2. React 19 Form (Simple Action Prop)
-const React19Form = () => {
-  // Action function automatically receives FormData
-  const handleAction = (formData) => {
-    const name = formData.get('name');
-    const email = formData.get('email');
-    console.log('React 19 Action Data:', { name, email });
-    alert('React 19 Action: Check Console for data');
-  };
-
-  return (
-    <div className="card mb-4 shadow-sm">
-      <div className="card-header bg-success text-white">
-        <h5 className="mb-0">React 19 Form</h5>
-        <small>(action prop)</small>
-      </div>
-      <div className="card-body">
-        {/* React 19 allows functions passed to action prop */}
-        <form action={handleAction}>
-          <div className="mb-3">
-            <label className="form-label">Name</label>
-            <input type="text" name="name" className="form-control" placeholder="Enter name" required />
-          </div>
-          <div className="mb-3">
-            <label className="form-label">Email</label>
-            <input type="email" name="email" className="form-control" placeholder="Enter email" required />
-          </div>
-          <button type="submit" className="btn btn-success w-100">Submit (React 19)</button>
-        </form>
-      </div>
-    </div>
-  );
-};
+import React19Form from '../component/form-action/React19Form';
 
 // 3. React 19 Form (useActionState)
 // Define action outside component or use useCallback needed if stable reference required (though simple function works here)
