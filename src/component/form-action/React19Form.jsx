@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { react19ExampleCode } from './example/react19-code';
 import { react19Docs } from './docs/react19-docs';
 import React19DocsFooter from './docs/React19DocsFooter';
+import CodeModal from '../common/CodeModal';
 
 const React19Form = () => {
     const [submittedData, setSubmittedData] = useState(null);
@@ -18,29 +19,23 @@ const React19Form = () => {
     };
 
     return (
-        <div className="card h-100 shadow-sm border-success">
-            <div className="card-header bg-success text-white d-flex justify-content-between align-items-center">
-                <h5 className="mb-0">React 19 Form</h5>
-                <div className="d-flex gap-2">
-                    <button
-                        className="btn btn-sm btn-light text-success"
-                        onClick={() => setShowCode(!showCode)}
-                        title="Toggle Code View"
-                    >
-                        {showCode ? 'Hide Code' : 'Show Code'}
-                    </button>
-                    <span className="badge bg-light text-success d-flex align-items-center">Action</span>
-                </div>
-            </div>
-
-            <div className="card-body">
-                {showCode ? (
-                    <div className="bg-dark text-white p-3 rounded mb-3 position-relative">
-                        <pre className="mb-0 overflow-auto" style={{ fontSize: '0.85rem' }}>
-                            <code>{react19ExampleCode}</code>
-                        </pre>
+        <>
+            <div className="card h-100 shadow-sm border-success">
+                <div className="card-header bg-success text-white d-flex justify-content-between align-items-center">
+                    <h5 className="mb-0">React 19 Form</h5>
+                    <div className="d-flex gap-2">
+                        <button
+                            className="btn btn-sm btn-light text-success"
+                            onClick={() => setShowCode(true)}
+                            title="View Code"
+                        >
+                            View Code
+                        </button>
+                        <span className="badge bg-light text-success d-flex align-items-center">Action</span>
                     </div>
-                ) : (
+                </div>
+
+                <div className="card-body">
                     <form action={handleAction}>
                         <div className="mb-3">
                             <label className="form-label">Name</label>
@@ -66,20 +61,27 @@ const React19Form = () => {
                             Submit (React 19)
                         </button>
                     </form>
-                )}
 
-                {/* Always show submitted data if it exists */}
-                {submittedData && (
-                    <div className="mt-4 p-3 bg-light rounded border">
-                        <h6 className="text-success">Submitted Output:</h6>
-                        <p className="mb-1"><strong>Name:</strong> {submittedData.name}</p>
-                        <p className="mb-0"><strong>Email:</strong> {submittedData.email}</p>
-                    </div>
-                )}
+                    {/* Always show submitted data if it exists */}
+                    {submittedData && (
+                        <div className="mt-4 p-3 bg-light rounded border">
+                            <h6 className="text-success">Submitted Output:</h6>
+                            <p className="mb-1"><strong>Name:</strong> {submittedData.name}</p>
+                            <p className="mb-0"><strong>Email:</strong> {submittedData.email}</p>
+                        </div>
+                    )}
+                </div>
+
+                <React19DocsFooter docs={react19Docs} />
             </div>
 
-            <React19DocsFooter docs={react19Docs} />
-        </div>
+            <CodeModal
+                show={showCode}
+                onHide={() => setShowCode(false)}
+                title="React 19 Form Actions"
+                code={react19ExampleCode}
+            />
+        </>
     );
 };
 

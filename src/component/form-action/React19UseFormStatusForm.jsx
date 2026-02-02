@@ -4,6 +4,7 @@ import { useFormStatus } from 'react-dom';
 import { react19UseFormStatusCode } from './example/react19-use-form-status-code';
 import { react19UseFormStatusDocs } from './docs/react19-use-form-status-docs';
 import React19UseFormStatusDocsFooter from './docs/React19UseFormStatusDocsFooter';
+import CodeModal from '../common/CodeModal';
 
 // Define action (simulated server action)
 const submitAction = async (previousState, formData) => {
@@ -41,29 +42,23 @@ const React19UseFormStatusForm = () => {
     const [showCode, setShowCode] = useState(false);
 
     return (
-        <div className="card h-100 shadow-sm border-primary">
-            <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
-                <h5 className="mb-0">React 19 useFormStatus</h5>
-                <div className="d-flex gap-2">
-                    <button
-                        className="btn btn-sm btn-light text-primary"
-                        onClick={() => setShowCode(!showCode)}
-                        title="Toggle Code View"
-                    >
-                        {showCode ? 'Hide Code' : 'Show Code'}
-                    </button>
-                    <span className="badge bg-light text-primary d-flex align-items-center">Status</span>
-                </div>
-            </div>
-
-            <div className="card-body">
-                {showCode ? (
-                    <div className="bg-dark text-white p-3 rounded mb-3 position-relative">
-                        <pre className="mb-0 overflow-auto" style={{ fontSize: '0.85rem' }}>
-                            <code>{react19UseFormStatusCode}</code>
-                        </pre>
+        <>
+            <div className="card h-100 shadow-sm border-primary">
+                <div className="card-header bg-primary text-white d-flex justify-content-between align-items-center">
+                    <h5 className="mb-0">React 19 useFormStatus</h5>
+                    <div className="d-flex gap-2">
+                        <button
+                            className="btn btn-sm btn-light text-primary"
+                            onClick={() => setShowCode(true)}
+                            title="View Code"
+                        >
+                            View Code
+                        </button>
+                        <span className="badge bg-light text-primary d-flex align-items-center">Status</span>
                     </div>
-                ) : (
+                </div>
+
+                <div className="card-body">
                     <form action={formAction}>
                         <div className="mb-3">
                             <label className="form-label">Name</label>
@@ -83,23 +78,25 @@ const React19UseFormStatusForm = () => {
                         {/* Must be a child component to use useFormStatus */}
                         <SubmitButton />
                     </form>
-                )}
 
-                {/* Display feedback based on returned state */}
-                {state?.success && (
-                    <div className="mt-4 p-3 bg-light rounded border border-success">
-                        <h6 className="text-success mb-0">{state.success}</h6>
-                    </div>
-                )}
-                {state?.error && showCode && (
-                    <div className="mt-4 p-3 bg-light rounded border border-danger">
-                        <h6 className="text-danger mb-0">Error: {state.error}</h6>
-                    </div>
-                )}
+                    {/* Display feedback based on returned state */}
+                    {state?.success && (
+                        <div className="mt-4 p-3 bg-light rounded border border-success">
+                            <h6 className="text-success mb-0">{state.success}</h6>
+                        </div>
+                    )}
+                </div>
+
+                <React19UseFormStatusDocsFooter docs={react19UseFormStatusDocs} />
             </div>
 
-            <React19UseFormStatusDocsFooter docs={react19UseFormStatusDocs} />
-        </div>
+            <CodeModal
+                show={showCode}
+                onHide={() => setShowCode(false)}
+                title="React 19 useFormStatus"
+                code={react19UseFormStatusCode}
+            />
+        </>
     );
 };
 
