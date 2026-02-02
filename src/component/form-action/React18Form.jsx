@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { react18ExampleCode } from './example/react18-code';
+import { react18Docs } from './docs/react18-docs';
+import DocsFooter from './docs/React18DocsFooter';
 
 const React18Form = () => {
     const [formData, setFormData] = useState({ name: '', email: '' });
@@ -82,33 +84,7 @@ const React18Form = () => {
                 )}
             </div>
 
-            <div className="card-footer bg-light" style={{ fontSize: '0.9rem' }}>
-                <h6 className="fw-bold mb-2">Why use React 18 Pattern?</h6>
-
-                <div className="mb-2">
-                    <strong className="text-success">Pros:</strong>
-                    <ul className="ps-3 mb-1">
-                        <li>Complete control over input values.</li>
-                        <li>Instant feedback (e.g., character count, validation).</li>
-                    </ul>
-                </div>
-
-                <div className="mb-2">
-                    <strong className="text-danger">Cons:</strong>
-                    <ul className="ps-3 mb-1">
-                        <li>More boilerplate code (handlers, state).</li>
-                        <li>Re-renders on every keystroke (perf issue on large forms).</li>
-                    </ul>
-                </div>
-
-                <div>
-                    <strong>When to use:</strong>
-                    <p className="mb-0 text-muted">
-                        Use when you need live validation (like password strength),
-                        conditional fields, or integration with state managers.
-                    </p>
-                </div>
-            </div>
+            <DocsFooter docs={react18Docs} />
         </div>
     );
 };
