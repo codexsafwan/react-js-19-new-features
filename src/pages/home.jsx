@@ -1,134 +1,153 @@
 import React from "react";
-import { Server, Activity, Zap, GitBranch, FileText, Box, Monitor, Layers, Cpu } from "lucide-react";
+import { Server, Activity, Zap, GitBranch, FileText, Box, Monitor, Layers, Cpu, Linkedin, Github } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const features = [
   {
-    icon: <Server className="me-2" />,
+    icon: <FileText className="me-2" size={24} />,
+    title: "Form Actions",
+    description: "Simplify form submissions with the new 'action' prop, useFormStatus, and useActionState hooks.",
+    color: "bg-success text-white",
+    link: "/docs/form-action",
+    status: "Demo Ready",
+    statusColor: "bg-light text-success"
+  },
+  {
+    icon: <Zap className="me-2" size={24} />,
+    title: "useOptimistic",
+    description: "Display optimistic state immediately while a background action completes.",
+    color: "bg-primary text-white",
+    link: "#",
+    status: "Coming Soon",
+    statusColor: "bg-white text-dark opacity-75"
+  },
+  {
+    icon: <Box className="me-2" size={24} />,
+    title: "The 'use' API",
+    description: "Read resources like Promises or Context directly in render.",
+    color: "bg-warning text-dark",
+    link: "#",
+    status: "Info Only",
+    statusColor: "bg-dark text-white"
+  },
+  {
+    icon: <Server className="me-2" size={24} />,
     title: "Server Components",
-    description: "Build components that run on the server for better performance and reduced bundle size.",
-    color: "bg-primary text-white",
-  },
-  {
-    icon: <Activity className="me-2" />,
-    title: "Streaming SSR",
-    description: "Render HTML on the server progressively for faster page loads.",
-    color: "bg-success text-white",
-  },
-  {
-    icon: <Zap className="me-2" />,
-    title: "Improved Suspense",
-    description: "Suspense now supports data fetching for seamless UI loading states.",
-    color: "bg-danger text-white",
-  },
-  {
-    icon: <GitBranch className="me-2" />,
-    title: "Concurrent Rendering",
-    description: "Better concurrent rendering for smoother UI and faster updates.",
-    color: "bg-info text-white",
-  },
-  {
-    icon: <Box className="me-2" />,
-    title: "New Hooks",
-    description: "Includes useSyncExternalStore, useInsertionEffect, and useId for modern React patterns.",
-    color: "bg-warning text-white",
-  },
-  {
-    icon: <FileText className="me-2" />,
-    title: "Streaming SSR with ReactDOM",
-    description: "Enhanced integration with ReactDOM for streaming server-side rendering.",
-    color: "bg-secondary text-white",
-  },
-  {
-    icon: <Monitor className="me-2" />,
-    title: "Improved TypeScript Support",
-    description: "Better type inference and compatibility for TypeScript projects.",
+    description: "Run components on the server for zero-bundle-size/latency access to backend resources.",
     color: "bg-dark text-white",
+    link: "#",
+    status: "Core Concept",
+    statusColor: "bg-secondary text-white"
   },
   {
-    icon: <Layers className="me-2" />,
-    title: "New JSX Transform",
-    description: "Simpler JSX transform for faster compilation and smaller bundles.",
-    color: "bg-success text-white",
+    icon: <GitBranch className="me-2" size={24} />,
+    title: "Ref as a Prop",
+    description: "Pass 'ref' as a normal prop to function components. No more forwardRef!",
+    color: "bg-info text-white",
+    link: "#",
+    status: "Update",
+    statusColor: "bg-white text-info"
   },
   {
-    icon: <Cpu className="me-2" />,
-    title: "React DevTools 19 Enhancements",
-    description: "Enhanced DevTools support for inspecting concurrent features and server components.",
-    color: "bg-warning text-white",
-  },
-  {
-    icon: <Activity className="me-2" />,
-    title: "Performance & Memory Improvements",
-    description: "Optimizations to make React apps faster and more memory-efficient.",
-    color: "bg-primary text-white",
-  },
+    icon: <Layers className="me-2" size={24} />,
+    title: "<Context> as Provider",
+    description: "Render <Context> directly instead of <Context.Provider>.",
+    color: "bg-secondary text-white",
+    link: "#",
+    status: "Update",
+    statusColor: "bg-dark text-white"
+  }
 ];
 
 const HomePage = () => {
   return (
-    <div className="bg-light min-vh-100">
+    <div className="bg-light min-vh-100 font-sans">
 
       {/* Hero Section */}
       <section
         className="py-5 text-center text-white"
-        style={{ background: 'linear-gradient(90deg, #4f46e5, #3b82f6)' }}
+        style={{ background: 'linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%)' }}
       >
-        <div className="container">
-          <h1 className="display-4 fw-bold mb-3">React 19 Learning Hub</h1>
-          <p className="lead mb-4">Author: <strong>Codex Safwan</strong></p>
-          <div className="d-flex justify-content-center gap-2 flex-wrap">
-            <a href="/docs/getting-started" className="btn btn-light btn-lg">
-              Getting Started
+        <div className="container py-5">
+          <div className="d-inline-block p-2 px-3 bg-white bg-opacity-25 rounded-pill mb-3 backdrop-blur">
+            <span className="small fw-bold text-uppercase tracking-wider">React 19 Is Here</span>
+          </div>
+          <h1 className="display-3 fw-bold mb-3">React 19 Feature Showcase</h1>
+          <p className="lead mb-4 opacity-90" style={{ maxWidth: '700px', margin: '0 auto' }}>
+            Explored & Implemented by <strong className="text-warning">Codex Safwan</strong>.
+            <br />
+            Dive into practical examples of the latest hooks and patterns.
+          </p>
+
+          <div className="d-flex justify-content-center gap-3 mt-4">
+            <a
+              href="https://www.linkedin.com/in/safwancse/"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-outline-light btn-lg d-flex align-items-center gap-2"
+            >
+              <Linkedin size={20} /> LinkedIn
             </a>
-            <a href="/docs/form-action" className="btn btn-outline-light btn-lg">
-              Form Actions
+            <a
+              href="https://github.com/codexsafwan"
+              target="_blank"
+              rel="noreferrer"
+              className="btn btn-dark btn-lg d-flex align-items-center gap-2 border-white"
+            >
+              <Github size={20} /> GitHub
             </a>
           </div>
         </div>
       </section>
 
-      {/* Features Section */}
+      {/* Dashboard Grid */}
       <section className="py-5">
-        <div className="container">
-          <h2 className="text-center mb-5">React 19 Key Features</h2>
-          <div className="row g-4">
+        <div className="container" style={{ marginTop: '-60px' }}>
+          <div className="row g-4 justify-content-center">
             {features.map((feature, index) => (
-              <div key={index} className="col-12 col-md-6 col-lg-4">
-                <div className="card h-100 shadow-sm border-0">
-                  <div className={`card-body ${feature.color} rounded-top mb-3 d-flex align-items-center`}>
-                    {feature.icon}
-                    <h5 className="card-title mb-0">{feature.title}</h5>
+              <div key={index} className="col-md-6 col-lg-4">
+                <Link to={feature.link} className="text-decoration-none">
+                  <div className={`card h-100 shadow border-0 overflow-hidden transform-hover`}>
+                    <div className={`card-header ${feature.color} border-0 py-3 d-flex justify-content-between align-items-center`}>
+                      <div className="d-flex align-items-center">
+                        {feature.icon}
+                        <h5 className="mb-0 fw-bold">{feature.title}</h5>
+                      </div>
+                      <span className={`badge ${feature.statusColor} rounded-pill`}>
+                        {feature.status}
+                      </span>
+                    </div>
+                    <div className="card-body bg-white text-dark">
+                      <p className="card-text text-muted">
+                        {feature.description}
+                      </p>
+                      {feature.status === "Demo Ready" && (
+                        <div className="mt-3 text-primary fw-bold small text-uppercase">
+                          Try Demo &rarr;
+                        </div>
+                      )}
+                    </div>
                   </div>
-                  <p className="card-text px-3">{feature.description}</p>
-                </div>
+                </Link>
               </div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-5 bg-primary text-white text-center">
-        <div className="container">
-          <h2 className="mb-3">Start Exploring React 19 Today</h2>
-          <p className="mb-4">
-            Build modern, interactive, and high-performance web apps with React 19 features.
-          </p>
-          <a href="/docs/getting-started" className="btn btn-light btn-lg">
-            Learn Now
-          </a>
-        </div>
-      </section>
-
       {/* Footer */}
-      <footer className="bg-dark text-white py-4 text-center">
+      <footer className="bg-white border-top py-4 text-center mt-auto">
         <div className="container">
-          <p className="mb-1">&copy; 2026 Codex Safwan. All rights reserved.</p>
-          <p className="mb-0 small">
-            Follow for updates: <a href="#" className="text-white">Twitter</a> | <a href="#" className="text-white">GitHub</a> | <a href="#" className="text-white">LinkedIn</a>
+          <p className="mb-0 text-muted">
+            &copy; {new Date().getFullYear()} <strong className="text-dark">Codex Safwan</strong>. Built with React 19 & Vite.
           </p>
         </div>
       </footer>
+
+      <style>{`
+        .transform-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+        .transform-hover:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1) !important; }
+      `}</style>
     </div>
   );
 };

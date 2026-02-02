@@ -1,89 +1,46 @@
-import React from "react";
-import { NavLink } from "react-router-dom";
+import React from 'react';
+import { Link, useLocation } from 'react-router-dom';
 
 const Navbar = () => {
-  return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary shadow">
-      <div className="container">
-        {/* Brand */}
-        <NavLink className="navbar-brand fw-bold" to="/">
-          React 19 Docs
-        </NavLink>
+  const location = useLocation();
 
-        {/* Toggler / Hamburger */}
+  return (
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark shadow-sm">
+      <div className="container">
+        <Link className="navbar-brand fw-bold" to="/">
+          <span className="text-primary">React 19</span> Features
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
           data-bs-toggle="collapse"
-          data-bs-target="#navbarContent"
-          aria-controls="navbarContent"
-          aria-expanded="false"
-          aria-label="Toggle navigation"
+          data-bs-target="#navbarNav"
         >
           <span className="navbar-toggler-icon"></span>
         </button>
-
-        {/* Navbar Links */}
-        <div className="collapse navbar-collapse" id="navbarContent">
-          <ul className="navbar-nav me-auto mb-2 mb-lg-0">
+        <div className="collapse navbar-collapse" id="navbarNav">
+          <ul className="navbar-nav me-auto">
             <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "nav-link active" : "nav-link"
-                }
+              <Link
+                className={`nav-link ${location.pathname === '/' ? 'active' : ''}`}
                 to="/"
               >
                 Home
-              </NavLink>
+              </Link>
             </li>
-
-            {/* Docs Dropdown */}
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                id="docsDropdown"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Docs
-              </a>
-              <ul className="dropdown-menu" aria-labelledby="docsDropdown">
-                <li>
-                  <NavLink className="dropdown-item" to="/docs/getting-started">
-                    Getting Started
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="dropdown-item" to="/docs/form-action">
-                    Form Action
-                  </NavLink>
-                </li>
-                <li>
-                  <NavLink className="dropdown-item" to="/docs/server-table">
-                    Server Table
-                  </NavLink>
-                </li>
-              </ul>
-            </li>
-
             <li className="nav-item">
-              <NavLink
-                className={({ isActive }) =>
-                  isActive ? "nav-link active" : "nav-link"
-                }
-                to="/about"
+              <Link
+                className={`nav-link ${location.pathname === '/docs/form-action' ? 'active' : ''}`}
+                to="/docs/form-action"
               >
-                About
-              </NavLink>
+                Form Actions
+              </Link>
             </li>
           </ul>
-
-          {/* Right Side Buttons */}
-          <div className="d-flex gap-2">
-            <button className="btn btn-outline-light">Login</button>
-            <button className="btn btn-light">Sign Up</button>
+          <div className="d-flex align-items-center">
+            <span className="text-white-50 small me-3">
+              Created by <strong className="text-white">Codex Safwan</strong>
+            </span>
           </div>
         </div>
       </div>
