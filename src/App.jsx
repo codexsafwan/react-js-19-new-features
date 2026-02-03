@@ -3,15 +3,17 @@ import './App.css'
 import FormActionPage from "./pages/form-action";
 import Navbar from "./component/layout/navbar";
 import HomePage from "./pages/home";
+import TransitionPage from "./pages/transition";
 function App() {
 
   return (
     <Router>
-         <Navbar />
+      <Navbar />
       <div className="p-4">
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/docs/form-action" element={<FormActionPage />} />
+          <Route path="/docs/transition" element={<TransitionPage />} />
         </Routes>
       </div>
     </Router>
