@@ -44,6 +44,14 @@ const Navbar = () => {
                 Transition
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${location.pathname === '/docs/use-hook' ? 'active' : ''}`}
+                to="/docs/use-hook"
+              >
+                Use Hook
+              </Link>
+            </li>
           </ul>
           <div className="d-flex align-items-center">
             <span className="text-white-50 small me-3">
