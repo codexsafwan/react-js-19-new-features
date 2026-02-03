@@ -4,6 +4,7 @@ import FormActionPage from "./pages/form-action";
 import Navbar from "./component/layout/navbar";
 import HomePage from "./pages/home";
 import TransitionPage from "./pages/transition";
+import { UseHookPage } from "./pages/use-hook";
 function App() {
 
   return (
@@ -14,6 +15,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/docs/form-action" element={<FormActionPage />} />
           <Route path="/docs/transition" element={<TransitionPage />} />
+          <Route path="/docs/use-hook" element={<UseHookPage />} />
         </Routes>
       </div>
     </Router>
