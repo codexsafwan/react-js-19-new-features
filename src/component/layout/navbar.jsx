@@ -52,6 +52,14 @@ const Navbar = () => {
                 Use Hook
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${location.pathname === '/docs/optimistic' ? 'active' : ''}`}
+                to="/docs/optimistic"
+              >
+                Optimistic
+              </Link>
+            </li>
           </ul>
           <div className="d-flex align-items-center">
             <span className="text-white-50 small me-3">
