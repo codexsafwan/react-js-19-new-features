@@ -6,6 +6,7 @@ import HomePage from "./pages/home";
 import TransitionPage from "./pages/transition";
 import { UseHookPage } from "./pages/use-hook";
 import OptimisticPage from "./pages/optimistic";
+import MetaData from "./pages/meta-data";
 function App() {
 
   return (
@@ -18,6 +19,7 @@ function App() {
           <Route path="/docs/transition" element={<TransitionPage />} />
           <Route path="/docs/use-hook" element={<UseHookPage />} />
           <Route path="/docs/optimistic" element={<OptimisticPage />} />
+          <Route path="/docs/meta-data" element={<MetaData />} />
         </Routes>
       </div>
     </Router>

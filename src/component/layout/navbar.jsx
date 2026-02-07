@@ -60,6 +60,14 @@ const Navbar = () => {
                 Optimistic
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${location.pathname === '/docs/meta-data' ? 'active' : ''}`}
+                to="/docs/meta-data"
+              >
+                Meta Data
+              </Link>
+            </li>
           </ul>
           <div className="d-flex align-items-center">
             <span className="text-white-50 small me-3">
