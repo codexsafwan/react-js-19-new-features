@@ -3,6 +3,7 @@ import BlockingExample from '../component/transition/BlockingExample'
 import TransitionExample from '../component/transition/TransitionExample'
 import AsyncTransitionExample from '../component/transition/AsyncTransitionExample'
 import ConcurrentInfo from '../component/transition/ConcurrentInfo'
+import PageHeader from '../component/common/PageHeader'
 
 const TransitionPage = () => {
     return (
@@ -13,35 +14,8 @@ const TransitionPage = () => {
             background: 'radial-gradient(circle at top right, hsl(var(--primary-light) / 0.5), transparent 40%), radial-gradient(circle at bottom left, hsl(var(--secondary-light) / 0.5), transparent 40%)',
             minHeight: '100vh'
         }}>
-            <header style={{ textAlign: 'center', marginBottom: '4rem' }}>
-                <div className="badge badge-primary" style={{ marginBottom: '1rem', padding: '0.4rem 1.25rem', letterSpacing: '0.1em' }}>
-                    CodexLab
-                </div>
-                <h1 style={{
-                    fontSize: 'clamp(2.5rem, 6vw, 4.5rem)',
-                    fontWeight: '950',
-                    marginBottom: '1rem',
-                    letterSpacing: '-0.06em',
-                    lineHeight: '0.9',
-                    color: 'hsl(var(--foreground))'
-                }}>
-                    React 19 <span style={{
-                        background: 'linear-gradient(135deg, hsl(var(--primary)), hsl(var(--secondary)), hsl(var(--accent)))',
-                        WebkitBackgroundClip: 'text',
-                        WebkitTextFillColor: 'transparent'
-                    }}>Concurrent</span> Performance
-                </h1>
-                <p style={{
-                    fontSize: '1.25rem',
-                    color: 'hsl(var(--foreground) / 0.7)',
-                    maxWidth: '800px',
-                    margin: '0 auto',
-                    lineHeight: '1.4',
-                    fontWeight: '400'
-                }}>
-                    Experience how React 19 transforms UI responsiveness with optimized transition patterns.
-                </p>
-            </header>
+
+            <PageHeader title="React 19 Transition" description="Experience how React 19 transforms UI responsiveness with optimized transition patterns." />
 
             <div style={{
                 display: 'grid',
