@@ -68,6 +68,14 @@ const Navbar = () => {
                 Meta Data
               </Link>
             </li>
+            <li className="nav-item">
+              <Link
+                className={`nav-link ${location.pathname === '/docs/forward-ref' ? 'active' : ''}`}
+                to="/docs/forward-ref"
+              >
+                Forward Ref
+              </Link>
+            </li>
           </ul>
           <div className="d-flex align-items-center">
             <span className="text-white-50 small me-3">
