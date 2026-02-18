@@ -5,13 +5,7 @@ import RealLifeExample from '../component/forward-ref/RealLifeExample'
 
 const ForwardRefPage = () => {
     return (
-        <div style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '4rem 2rem',
-            background: 'radial-gradient(circle at top right, hsl(var(--primary-light) / 0.5), transparent 40%), radial-gradient(circle at bottom left, hsl(var(--secondary-light) / 0.5), transparent 40%)',
-            minHeight: '100vh'
-        }}>
+        <>
             <PageHeader 
                 title="React 19 forwardRef" 
                 description="Refs are now props. No more forwardRef wrapper needed for functional components." 
@@ -100,7 +94,7 @@ const ForwardRefPage = () => {
                     </p>
                 </div>
             </div>
-        </div>
+        </>
     )
 }
 

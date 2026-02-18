@@ -1,6 +1,6 @@
 const PageHeader = ({title, description}) => {
   return (
-            <header style={{ textAlign: 'center', marginBottom: '4rem' }}>
+            <header style={{ textAlign: 'center', marginBottom: '4rem', marginTop: '2rem' }}>
                 <div className="badge badge-primary" style={{ marginBottom: '1rem', padding: '0.4rem 1.25rem', letterSpacing: '0.1em' }}>
                     CodexLab
                 </div>

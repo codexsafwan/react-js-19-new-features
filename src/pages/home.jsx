@@ -161,7 +161,8 @@ const FeatureCard = ({ feature, index }) => {
 ───────────────────────────────────────────── */
 const HomePage = () => {
   return (
-    <div className="hp-root">
+    <>
+
 
       {/* ── Hero ── */}
       <section className="hp-hero">
@@ -339,15 +340,6 @@ const HomePage = () => {
 
       {/* ── Scoped Styles ── */}
       <style>{`
-        /* Root */
-        .hp-root {
-          min-height: 100vh;
-          background: #ffffff;
-          color: #1e293b;
-          font-family: 'Outfit', sans-serif;
-          overflow-x: hidden;
-        }
-
         /* ── Hero ── */
         .hp-hero {
           position: relative;
@@ -357,7 +349,7 @@ const HomePage = () => {
           align-items: center;
           justify-content: center;
           text-align: center;
-          padding: 6rem 1.5rem 4rem;
+          padding: 1rem 1.5rem 4rem;
           overflow: hidden;
         }
 
@@ -858,7 +850,8 @@ const HomePage = () => {
           .hp-cta-inner { padding: 3rem 1.25rem; }
         }
       `}</style>
-    </div>
+    </>
+
   );
 };
 

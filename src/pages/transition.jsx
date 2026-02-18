@@ -7,14 +7,7 @@ import PageHeader from '../component/common/PageHeader'
 
 const TransitionPage = () => {
     return (
-        <div style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '4rem 2rem',
-            background: 'radial-gradient(circle at top right, hsl(var(--primary-light) / 0.5), transparent 40%), radial-gradient(circle at bottom left, hsl(var(--secondary-light) / 0.5), transparent 40%)',
-            minHeight: '100vh'
-        }}>
-
+        <>
             <PageHeader title="React 19 Transition" description="Experience how React 19 transforms UI responsiveness with optimized transition patterns." />
 
             <div style={{
@@ -126,7 +119,7 @@ const TransitionPage = () => {
                 }
                 @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
             `}</style>
-        </div>
+        </>
     )
 }
 

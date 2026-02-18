@@ -197,3 +197,21 @@ body {
   border-radius: 0.5rem;
   border: 1px solid hsl(var(--border));
 }
+
+/* Custom Utilities for Navbar */
+.transition-all {
+  transition: all 0.3s ease;
+}
+
+.hover-bg-light:hover {
+  background-color: hsl(var(--secondary-light));
+  color: hsl(var(--secondary));
+}
+
+.hover-opacity-100:hover {
+  opacity: 1 !important;
+}
+
+.z-50 {
+  z-index: 1050;
+}

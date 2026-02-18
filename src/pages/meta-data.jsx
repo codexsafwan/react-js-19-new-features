@@ -6,17 +6,8 @@ import PageHeader from '../component/common/PageHeader';
 
 export default function MetaData() {
   return (
-    <div style={{
-        maxWidth: '1400px',
-        margin: '0 auto',
-        padding: '4rem 2rem',
-        background: 'radial-gradient(circle at top right, hsl(var(--primary-light) / 0.5), transparent 40%), radial-gradient(circle at bottom left, hsl(var(--secondary-light) / 0.5), transparent 40%)',
-        minHeight: '100vh'
-    }}>
-
-
-     <PageHeader title="React 19 Metadata" description="No more react-helmet. React 19 natively renders and hoists title and meta tags." />
-
+    <>
+      <PageHeader title="React 19 Metadata" description="No more react-helmet. React 19 natively renders and hoists title and meta tags." />
 
         <div style={{
             display: 'grid',
@@ -38,6 +29,6 @@ export default function MetaData() {
                 }
             }
         `}</style>
-    </div>
+    </>
   );
 }

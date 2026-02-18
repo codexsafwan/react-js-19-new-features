@@ -8,7 +8,7 @@ import PageHeader from '../component/common/PageHeader'
 
 export const UseHookPage = () => {
   return (
-    <div className="container py-5">
+    <>
  
       <PageHeader title="React 19 Use Hook" description="Declarative data fetching and context reading in React 19" />
 
@@ -29,6 +29,6 @@ export const UseHookPage = () => {
         </div>
       </div>
 
-    </div>
+    </>
   )
 }

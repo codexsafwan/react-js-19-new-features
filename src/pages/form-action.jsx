@@ -9,15 +9,7 @@ import PageHeader from '../component/common/PageHeader';
 
 const FormActionPage = () => {
     return (
-        <div style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '4rem 2rem',
-            background: 'radial-gradient(circle at top right, hsl(var(--primary-light) / 0.5), transparent 40%), radial-gradient(circle at bottom left, hsl(var(--secondary-light) / 0.5), transparent 40%)',
-            minHeight: '100vh'
-        }}>
-
-         
+        <>
             <PageHeader title="React 19 Form Actions" description="Explore the new patterns for handling form state and actions natively in React 19." />
 
             <div style={{
@@ -41,7 +33,7 @@ const FormActionPage = () => {
                     }
                 }
             `}</style>
-        </div>
+        </>
     );
 };
 

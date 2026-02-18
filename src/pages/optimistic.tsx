@@ -6,13 +6,7 @@ import PageHeader from '../component/common/PageHeader';
 
 const OptimisticPage = () => {
     return (
-        <div style={{
-            maxWidth: '1400px',
-            margin: '0 auto',
-            padding: '4rem 2rem',
-            background: 'radial-gradient(circle at top right, hsl(var(--primary-light) / 0.5), transparent 40%), radial-gradient(circle at bottom left, hsl(var(--secondary-light) / 0.5), transparent 40%)',
-            minHeight: '100vh'
-        }}>
+        <>
   
            <PageHeader title="React 19 Optimistic" description="Native support for optimistic UI updates in React 19 using the new useOptimistic hook." />
             
@@ -36,7 +30,7 @@ const OptimisticPage = () => {
                     }
                 }
             `}</style>
-        </div>
+        </>
     );
 };
 
